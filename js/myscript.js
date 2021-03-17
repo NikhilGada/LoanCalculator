@@ -10,10 +10,13 @@ function calculate(pa,ia,y){
 	var a = Math.pow(r+1,y*12);
 	var b = a/(a-1)
 	var res = pa*r*b
-	output(res,pa)
+	var total = res*y*12
+	var temi = total-pa
+	output(res,total,temi)
 }
 
-function output(res,pa){
+function output(res,total,temi){
 	document.getElementsByName('displayemi')[0].value= res.toFixed(0);
-	document.getElementsByName('displaytotal')[0].value= parseInt(res.toFixed(0)) + parseInt(pa);
+	document.getElementsByName('displaytemi')[0].value= Math.round(temi);
+	document.getElementsByName('displaytotal')[0].value= Math.round(total);
 }
